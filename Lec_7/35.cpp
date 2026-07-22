@@ -1,4 +1,4 @@
-//bruteforce approach
+//bruteforce approach - simple traversal
 
 class Solution {
 public:
@@ -61,3 +61,16 @@ public:
 };
 //Time Complexity: O(logn) - We divide the search space in half each time.
 //Space Complexity: O(1) - We do not use any extra space.   
+
+
+//Alternate short method using stl:
+
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+
+        // lower_bound returns an iterator to the first element
+        // that is greater than or equal to target.
+        return lower_bound(nums.begin(), nums.end(), target) - nums.begin();
+    }
+};
